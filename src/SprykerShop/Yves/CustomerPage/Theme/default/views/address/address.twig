@@ -8,19 +8,19 @@
 } %}
 
 {% block customerContent %}
-    <div class="box text-right">
-        <a class="button" href="{{url('customer/address/new')}}" {{qa('customer-add-new-address')}}>{{ 'customer.account.add_new_address' | trans }}</a>
+    <div class="{{ns()}} box text-right">
+        <a class="{{ns()}} button" href="{{url('customer/address/new')}}" {{qa('customer-add-new-address')}}>{{ 'customer.account.add_new_address' | trans }}</a>
     </div>
 
     {% for address in data.addresses %}
-        <div class="box">
-            <ul class="menu menu--inline float-right">
-                <li class="menu__item">
+        <div class="{{ns()}} box">
+            <ul class="{{ns()}} menu menu--inline float-right">
+                <li class="{{ns()}} menu__item">
                     <a href="{{ url('customer/address/update', {'id': address.idCustomerAddress }) }}">
                         {{ "customer.profile.address.edit" | trans }}
                     </a>
                 </li>
-                <li class="menu__item">
+                <li class="{{ns()}} menu__item">
                     <a href="{{ url('customer/address/delete', {'id': address.idCustomerAddress }) }}">
                         {{ "customer.profile.address.delete" | trans }}
                     </a>

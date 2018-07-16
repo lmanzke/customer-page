@@ -10,8 +10,8 @@
 {% block pageInfo %}{% endblock %}
 
 {% block content %}
-    <div class="grid">
-        <div class="col col--sm-12 col--lg-6">
+    <div class="{{ns()}} grid">
+        <div class="{{ns()}} col col--sm-12 col--lg-6">
             {% include molecule('form') with {
                 class: 'box',
                 data: {
@@ -29,7 +29,7 @@
             } only %}
         </div>
 
-        <div class="col col--sm-12 col--lg-6">
+        <div class="{{ns()}} col col--sm-12 col--lg-6">
             {% include molecule('form') with {
                 class: 'box',
                 data: {

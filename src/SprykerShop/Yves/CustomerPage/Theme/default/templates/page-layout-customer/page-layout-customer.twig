@@ -15,14 +15,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="grid">
-        <div class="col col--sm-12 col--md-3">
+    <div class="{{ns()}} grid">
+        <div class="{{ns()}} col col--sm-12 col--md-3">
             {% block customerNavigation %}
                 {{ widgetGlobal('CustomerNavigationWidgetPlugin', data.activePage) }}
             {% endblock %}
         </div>
 
-        <div class="col col--sm-12 col--md-9">
+        <div class="{{ns()}} col col--sm-12 col--md-9">
             {% block customerContent %}{% endblock %}
         </div>
     </div>

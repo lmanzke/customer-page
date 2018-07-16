@@ -11,8 +11,8 @@
 {% block customerContent %}
     {{ widgetBlock('CustomerReorderWidgetPlugin', 'formStart', data.order) }}
 
-    <div class="box">
-        <a href="{{url('customer/order')}}" class="link float-right">{{ 'general.back.button' | trans }}</a>
+    <div class="{{ns()}} box">
+        <a href="{{url('customer/order')}}" class="{{ns()}} link float-right">{{ 'general.back.button' | trans }}</a>
         <h5>{{ 'customer.profile.order_details' | trans }}</h5>
         <hr />
         <ul>
@@ -64,7 +64,7 @@
         } only %}
     </div>
 
-    <div class="box">
+    <div class="{{ns()}} box">
         <h5>{{ 'customer.order.shipping_address' | trans }}</h5>
         <hr />
         {% include molecule('display-address') with {
@@ -74,7 +74,7 @@
         } only %}
     </div>
 
-    <div class="box">
+    <div class="{{ns()}} box">
         <h5>{{ 'customer.order.billing_address' | trans }}</h5>
         <hr />
         {% include molecule('display-address') with {

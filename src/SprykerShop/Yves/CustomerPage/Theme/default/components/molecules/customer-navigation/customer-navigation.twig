@@ -17,36 +17,36 @@
 {%- import _self as macros -%}
 
 {% block body %}
-    <ul class="menu">
-        <li class="menu__item">
+    <ul class="{{ns()}} menu">
+        <li class="{{ns()}} menu__item">
             <a href="{{ path('customer/overview') }}"
-               class="{{macros.isActive('overview', data.activePage)}}"
+               class="{{ns()}} {{macros.isActive('overview', data.activePage)}}"
                data-id="sidebar-overview">{{ 'customer.account.overview' | trans }}</a>
         </li>
-        <li class="menu__item">
+        <li class="{{ns()}} menu__item">
             <a href="{{ path('customer/profile') }}"
-               class="{{macros.isActive('profile', data.activePage)}}"
+               class="{{ns()}} {{macros.isActive('profile', data.activePage)}}"
                data-id="sidebar-profile">{{ 'customer.account.profile_data' | trans }}</a>
         </li>
-        <li class="menu__item {{macros.isActive('address', data.activePage)}}">
+        <li class="{{ns()}} menu__item {{macros.isActive('address', data.activePage)}}">
             <a href="{{ path('customer/address') }}"
-               class="{{macros.isActive('address', data.activePage)}}"
+               class="{{ns()}} {{macros.isActive('address', data.activePage)}}"
                data-id="sidebar-address">{{ 'customer.account.address' | trans }}</a>
         </li>
-        <li class="menu__item {{macros.isActive('order', data.activePage)}}">
+        <li class="{{ns()}} menu__item {{macros.isActive('order', data.activePage)}}">
             <a href="{{ path('customer/order') }}"
-               class="{{macros.isActive('order', data.activePage)}}"
+               class="{{ns()}} {{macros.isActive('order', data.activePage)}}"
                data-id="sidebar-order">{{ 'customer.account.order_history' | trans }}</a>
         </li>
-        <li class="menu__item {{macros.isActive('newsletter', data.activePage)}}">
+        <li class="{{ns()}} menu__item {{macros.isActive('newsletter', data.activePage)}}">
             <a href="{{ path('customer/newsletter') }}"
-               class="{{macros.isActive('newsletter', data.activePage)}}"
+               class="{{ns()}} {{macros.isActive('newsletter', data.activePage)}}"
                data-id="sidebar-newsletter">{{ 'customer.account.newsletter' | trans }}</a>
         </li>
         {{ widget('WishlistMenuItemWidgetPlugin', data.activePage, data.activeEntityId) }}
         {{ widget('ShoppingListMenuItemWidgetPlugin', data.activePage, data.activeEntityId) }}
         {% if widgetGlobalExists('MenuItemBusinessOnBehalfWidgetPlugin') %}
-            <li class="menu__item menu__item--has-children-list {{macros.isActive('menuItemBusinessOnBehalfWidget', data.activePage)}}">
+            <li class="{{ns()}} menu__item menu__item--has-children-list {{macros.isActive('menuItemBusinessOnBehalfWidget', data.activePage)}}">
                 {{ widgetGlobal('MenuItemBusinessOnBehalfWidgetPlugin') }}
             </li>
         {% endif %}

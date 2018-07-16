@@ -13,7 +13,7 @@
     {% if data.orders is empty %}
         <p>{{ 'customer.account.no_order' | trans }}</p>
     {% else %}
-        <table class="table table--expand">
+        <table class="{{ns()}} table table--expand">
             <thead>
                 <tr>
                     <th>{{ 'customer.order.order_id' | trans }}</th>
@@ -29,14 +29,14 @@
                         <td>{{ date(order.createdAt) | formatDateTime }}</td>
                         <td>{{ order.totals.grandTotal | default(0) | money(true, order.currencyIsoCode) }}</td>
                         <td>
-                            <ul class="menu menu--inline">
-                                <li class="menu__item">
+                            <ul class="{{ns()}} menu menu--inline">
+                                <li class="{{ns()}} menu__item">
                                     <a href="{{ path('customer/order/details', {'id': order.idSalesOrder}) }}">
                                         {{ 'customer.order.view_order' | trans }}
                                     </a>
                                 </li>
                                 {% if widgetExists('CustomerReorderWidgetPlugin') %}
-                                    <li class="menu__item">
+                                    <li class="{{ns()}} menu__item">
                                         {{ widgetBlock('CustomerReorderWidgetPlugin', 'reorderAction', order) }}
                                     </li>
                                 {% endif %}

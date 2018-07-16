@@ -38,10 +38,10 @@
         }
     } only %}
 
-    <div class="box">
+    <div class="{{ns()}} box">
         <h5>{{ "customer.profile.delete" | trans }}</h5>
         <hr />
         {{ "customer.profile.delete.description" | trans }}
-        <a href="{{url('customer/delete')}}" class="button button--alert float-right">{{ "customer.profile.delete" | trans }}</a>
+        <a href="{{url('customer/delete')}}" class="{{ns()}} button button--alert float-right">{{ "customer.profile.delete" | trans }}</a>
     </div>
 {% endblock %}

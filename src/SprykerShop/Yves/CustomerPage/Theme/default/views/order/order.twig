@@ -16,7 +16,7 @@
 } %}
 
 {% block customerContent %}
-    <div class="box">
+    <div class="{{ns()}} box">
         <h5>{{ 'customer.order.all_orders' | trans }}</h5>
         <hr/>
         {% include molecule('order-table', 'CustomerPage') with {

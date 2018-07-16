@@ -9,7 +9,7 @@
 } %}
 
 {% block customerContent %}
-    <div class="box">
+    <div class="{{ns()}} box">
         {% include molecule('form') with {
             data: {
                 title: 'customer.account.edit_address_information' | trans,
